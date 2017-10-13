@@ -1,0 +1,8 @@
+Plug 'scrooloose/nerdtree'
+Plug 'dracula/vim'
+Plug 'itchyny/lightline.vim'
+" Plug 'jreybert/vimagit'
+" Plug 'sheerun/vim-polyglot'
+" Plug 'will133/vim-dirdiff'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plug 'junegunn/fzf.vim'

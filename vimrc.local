@@ -1,0 +1,95 @@
+" copy to buffer
+vmap <C-c> :w! ~/.vimbuffer<CR>
+nmap <C-c> :.w! ~/.vimbuffer<CR>
+" paste from buffer
+nmap <C-v> :r ~/.vimbuffer<CR>
+map <C-n> :NERDTreeToggle<CR>
+
+" packadd! matchit
+colorscheme dracula
+set noshowmatch
+set nospell
+setlocal nospell
+
+" Change leader to comma
+let mapleader = ","
+
+" Search for todos in rails app folder
+noremap <Leader>v :noautocmd vimgrep TODO app/** <CR>
+
+" Escape key delay fix
+set timeoutlen=1000 ttimeoutlen=0
+
+" lightline
+function! MyLightLinePercent()
+  if &ft !=? 'nerdtree'
+    return line('.') * 100 / line('$') . '%'
+  else
+    return ''
+  endif
+  endfunction
+function! MyLightLineLineInfo()
+  if &ft !=? 'nerdtree'
+    return line('.').':'. col('.')
+  else
+    return ''
+  endif
+endfunction
+function! LightlineFilename()
+  return &filetype ==# 'vimfiler' ? vimfiler#get_status_string() :
+        \ &filetype ==# 'unite' ? unite#get_status_string() :
+        \ &filetype ==# 'vimshell' ? vimshell#get_status_string() :
+        \ &filetype ==# 'vimshell' ? vimshell#get_status_string() :
+        \ &filetype ==# 'nerdtree' ? 'NERD' :
+        \ expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
+endfunction
+
+
+let g:lightline = {
+\ 'colorscheme': 'Dracula',
+\ }
+
+let g:lightline.component_function = {
+\ 'filename': 'LightlineFilename',
+\ 'percent': 'MyLightLinePercent',
+\ 'lineinfo': 'MyLightLineInfo'
+\}
+
+" Keep all vim-related temp files in a single directory
+let $TMPDIR = '/tmp/vim-' . $USER
+silent! call mkdir($TMPDIR, '', 0700)
+
+function! DoPrettyXML()
+  " save the filetype so we can restore it later
+  let l:origft = &ft
+  set ft=
+  " delete the xml header if it exists. This will
+  " permit us to surround the document with fake tags
+  " without creating invalid xml.
+  1s/<?xml .*?>//e
+  " insert fake tags around the entire document.
+  " This will permit us to pretty-format excerpts of
+  " XML that may contain multiple top-level elements.
+  0put ='<PrettyXML>'
+  $put ='</PrettyXML>'
+  silent %!xmllint --format -
+  " xmllint will insert an <?xml?> header. it's easy enough to delete
+  " if you don't want it.
+  " delete the fake tags
+  2d
+  $d
+  " restore the 'normal' indentation, which is one extra level
+  " too deep due to the extra tags we wrapped around the document.
+  silent %<
+  " back to home
+  1
+  " restore the filetype
+  exe "set ft=" . l:origft
+endfunction
+command! PrettyXML call DoPrettyXML()
+
+command! -bang -nargs=* Ag
+  \ call fzf#vim#ag(<q-args>,
+  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+  \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \                 <bang>0)
