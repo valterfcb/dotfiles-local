@@ -1,3 +1,15 @@
+"Valter Extra Config's
+
+"show line number
+set relativenumber
+
+"set cursor middle
+set scrolloff=12
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 " copy to buffer
 vmap <C-c> :w! ~/.vimbuffer<CR>
 nmap <C-c> :.w! ~/.vimbuffer<CR>
@@ -16,6 +28,12 @@ let mapleader = ","
 
 " Search for todos in rails app folder
 noremap <Leader>v :noautocmd vimgrep TODO app/** <CR>
+
+" Define where vimwiki is located
+let g:vimwiki_list = [{'path': '~/Documents/vimwiki/'}]
+
+" h, 'syntax': 'markdown', 'ext': '.md'}]
+
 
 " Escape key delay fix
 set timeoutlen=1000 ttimeoutlen=0
