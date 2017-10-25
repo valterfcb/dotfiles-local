@@ -10,7 +10,7 @@ set cursorline
 " enable folding
 set foldenable
 " open most folds by default
-set foldlevelstart=1
+set foldlevelstart=2
 " 10 nested fold max
 set foldnestmax=10
 " space open/close folds
