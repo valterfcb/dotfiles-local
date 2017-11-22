@@ -19,6 +19,10 @@ nnoremap <space> za
 set tabstop=2
 set et
 set shiftwidth=2
+"Plugin Emmet"
+"enable all function in all mode"
+let g:user_emmet_mode='a'
+
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
