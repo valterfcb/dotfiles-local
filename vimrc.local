@@ -10,18 +10,20 @@ set cursorline
 " enable folding
 set foldenable
 " open most folds by default
-set foldlevelstart=2
-" 10 nested fold max
-set foldnestmax=10
+set foldlevelstart=1
+" 12 nested fold max
+set foldnestmax=12
 " space open/close folds
 nnoremap <space> za
 " fold based on indent level
 set tabstop=2
 set et
 set shiftwidth=2
+
 "Plugin Emmet"
 "enable all function in all mode"
 let g:user_emmet_mode='a'
+let g:user_emmet_leader_key='<C-\>'
 
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -43,8 +45,6 @@ setlocal nospell
 " Change leader to comma
 let mapleader = ","
 
-" Search for todos in rails app folder
-noremap <Leader>v :noautocmd vimgrep TODO app/** <CR>
 
 " Define where vimwiki is located
 let g:vimwiki_list = [{'path': '~/Documents/vimwiki/'}]
