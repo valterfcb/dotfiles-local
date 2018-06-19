@@ -7,3 +7,6 @@ alias la="ls -la --color='auto'"
 alias ls="ls --color='auto'"
 alias c="clear"
 export PATH=~/.npm-global/bin:.git/safe/../../bin:/home/valter/.bin:/usr/local/sbin:/home/valter/bin:/home/valter/.local/bin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"

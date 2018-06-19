@@ -100,11 +100,16 @@ command! -bang -nargs=* Ag
   \                 <bang>0 ? fzf#vim#with_preview('up:60%')
   \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
   \                 <bang>0)
-" Colocado a Keybind ,f para o finder Ag
-nmap ,f :Ag<CR>
+" Colocado a Keybind  para o finder Ag
+nmap ,fg :Ag<CR>
 
+" Colocado a Keybind  para o Ctrl P 
+nmap ,ff <C-p>
 
-
+" Keybind para fechar tudo"
+nmap ,q :qa<CR>
+" Keybind para Salvar"
+nmap ,w :w<CR>
 
 
 
