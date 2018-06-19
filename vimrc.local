@@ -111,21 +111,7 @@ nmap ,q :qa<CR>
 " Keybind para Salvar"
 nmap ,w :w<CR>
 
-
+" Enter in Paste Mode"
 set pastetoggle=<F2>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
