@@ -112,6 +112,8 @@ nmap ,q :qa<CR>
 nmap ,w :w<CR>
 
 
+set pastetoggle=<F2>
+
 
 
 
