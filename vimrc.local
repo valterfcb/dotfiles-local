@@ -1,4 +1,21 @@
-"Valter Extra Config's
+++INICIO+++++++++Valter Extra Configs++++++++++++++++++
+
+----My Keybinds----
+" Colocado a Keybind  para o finder Ag
+nmap ,fg :Ag<CR>
+
+" Colocado a Keybind  para o Ctrl P
+nmap ,ff <C-p>
+
+" Keybind para fechar tudo
+nmap ,q :qa<CR>
+" Keybind para Salvar
+nmap ,w :w<CR>
+
+" Enter in Paste Mode
+set pastetoggle=<F2>
+
+------------------
 
 " show line number
 set relativenumber
@@ -20,14 +37,7 @@ set tabstop=2
 set et
 set shiftwidth=2
 
-"Plugin Emmet"
-"enable all function in all mode"
-let g:user_emmet_mode='a'
-let g:user_emmet_leader_key='<C-\>'
-
-
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++Valter Extra Configs ++++++++++++++++FIM++
 
 " copy to buffer
 vmap <C-c> :w! ~/.vimbuffer<CR>
@@ -100,18 +110,4 @@ command! -bang -nargs=* Ag
   \                 <bang>0 ? fzf#vim#with_preview('up:60%')
   \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
   \                 <bang>0)
-" Colocado a Keybind  para o finder Ag
-nmap ,fg :Ag<CR>
-
-" Colocado a Keybind  para o Ctrl P 
-nmap ,ff <C-p>
-
-" Keybind para fechar tudo"
-nmap ,q :qa<CR>
-" Keybind para Salvar"
-nmap ,w :w<CR>
-
-" Enter in Paste Mode"
-set pastetoggle=<F2>
-
 
