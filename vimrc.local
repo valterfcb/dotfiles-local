@@ -16,7 +16,7 @@ nmap ,w :w<CR>
 " Enter in Paste Mode
 set pastetoggle=<F2>
 
-------------------
+"------------------
 
 " show line number
 set relativenumber
