@@ -18,7 +18,7 @@ set pastetoggle=<F2>
 
 "----AutoRefresh quando o Cursor para--------------
 
-:set autoread | au CursorHold * checktime | call feedkeys("lh")
+:set autoread | au CursorHold * checktime
 
 "----Folding whith TAB but it is not working--------------
 
