@@ -16,9 +16,6 @@ nmap ,w :w<CR>
 " Enter in Paste Mode
 set pastetoggle=<F2>
 
-"----AutoRefresh quando o Cursor para--------------
-
-:set autoread | au CursorHold * checktime
 
 "----Folding whith TAB but it is not working--------------
 
