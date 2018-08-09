@@ -38,6 +38,12 @@ nnoremap <space> za
 set tabstop=2
 set et
 set shiftwidth=2
+set smarttab " Autotabs for certain code
+
+"---------------------------------------------
+syntax on " Syntax highlighting
+set showmatch " Shows matching brackets
+set ruler " Always shows location in file (line#)
 
 ++++++++++++++++++++++++++++
 ++++++++++++++++++++++++++++
